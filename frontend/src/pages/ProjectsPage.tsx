@@ -284,8 +284,8 @@ export const ProjectsPage: React.FC = () => {
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           CURATED PORTFOLIO
         </span>
-        <h1 className="text-5xl md:text-7xl font-display font-extrabold text-textPrimary mt-4">
-          Flagship Systems & <span className="text-outline">Case Studies</span>
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
+          Flagship Systems & <span className="text-accentCyan font-extrabold">Case Studies</span>
         </h1>
       </div>
 

@@ -15,7 +15,7 @@ export const BlogDetailPage: React.FC = () => {
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           INSIGHTS & ENGINEERING
         </span>
-        <h1 className="text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
           {slug?.replace(/-/g, ' ').toUpperCase() || 'ARTICLE TITLE'}
         </h1>
         <div className="flex items-center gap-4 text-xs font-mono text-textMuted mt-4">

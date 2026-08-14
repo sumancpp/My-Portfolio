@@ -112,14 +112,21 @@ body {
 
 /* Text stroke outline */
 .text-outline {
-  -webkit-text-stroke: 1px rgba(240, 242, 245, 0.25);
-  color: transparent;
+  color: #66FCF1;
+  -webkit-text-stroke: 1px #66FCF1;
   transition: all 0.4s ease;
 }
 
 .text-outline:hover {
   -webkit-text-stroke: 1px #66FCF1;
-  color: #66FCF1;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .text-outline {
+    color: #66FCF1 !important;
+    -webkit-text-stroke: 0 !important;
+  }
 }
 
 /* Lenis smooth scroll recommended fixes */

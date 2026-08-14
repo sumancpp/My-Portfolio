@@ -147,8 +147,8 @@ export const SkillsPage: React.FC = () => {
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase flex items-center gap-2">
           <FiCheckCircle className="text-accentCyan" /> TECHNICAL CAPABILITIES
         </span>
-        <h1 className="text-5xl md:text-7xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
-          Core Stack & <span className="text-outline">Engineering Expertise</span>
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
+          Core Stack & <span className="text-accentCyan font-extrabold">Engineering Expertise</span>
         </h1>
         <p className="text-textSecondary mt-4 max-w-3xl text-base md:text-lg leading-relaxed">
           Comprehensive breakdown of my technical proficiencies across modern frontend engineering, backend services, real-time protocols, generative AI architectures, programming languages, and dev infrastructure.

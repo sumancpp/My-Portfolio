@@ -91,8 +91,8 @@ export const CertificatesPage: React.FC = () => {
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           VERIFIED CREDENTIALS & ACHIEVEMENTS
         </span>
-        <h1 className="text-5xl md:text-7xl font-display font-extrabold text-textPrimary mt-4">
-          Certificates & <span className="text-outline">Honors</span>
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
+          Certificates & <span className="text-accentCyan font-extrabold">Honors</span>
         </h1>
       </div>
 

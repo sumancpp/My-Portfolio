@@ -70,8 +70,8 @@ export const ContactPage: React.FC = () => {
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           INITIATE CONTACT
         </span>
-        <h1 className="text-5xl md:text-7xl font-display font-extrabold text-textPrimary mt-4">
-          Contact <span className="text-outline">Suman Maity</span>
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
+          Contact <span className="text-accentCyan font-extrabold">Suman Maity</span>
         </h1>
       </div>
 

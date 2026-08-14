@@ -35,8 +35,8 @@ export const ExperiencePage: React.FC = () => {
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           CAREER PROGRESSION & MILESTONES
         </span>
-        <h1 className="text-5xl md:text-7xl font-display font-extrabold text-textPrimary mt-4">
-          Experience & <span className="text-outline">Education</span>
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
+          Experience & <span className="text-accentCyan font-extrabold">Education</span>
         </h1>
       </div>
 

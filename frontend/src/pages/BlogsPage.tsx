@@ -30,8 +30,8 @@ export const BlogsPage: React.FC = () => {
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           THOUGHTS & INSIGHTS
         </span>
-        <h1 className="text-5xl md:text-7xl font-display font-extrabold text-textPrimary mt-4">
-          Engineering & <span className="text-outline">Design Articles</span>
+        <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-extrabold text-textPrimary mt-4 leading-tight">
+          Engineering & <span className="text-accentCyan font-extrabold">Design Articles</span>
         </h1>
       </div>
 

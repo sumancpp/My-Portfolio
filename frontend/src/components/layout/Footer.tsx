@@ -52,14 +52,14 @@ export const Footer: React.FC = () => {
 
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 lg:gap-10">
             <div className="space-y-4 sm:space-y-6 max-w-3xl">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-accentCyan/10 border border-accentCyan/30 text-accentCyan font-mono text-xs font-semibold tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-accentCyan animate-ping" />
-                HAVE A VISIONARY PROJECT OR ROLE?
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-2xl sm:rounded-full bg-accentCyan/10 border border-accentCyan/30 text-accentCyan font-mono text-[10px] sm:text-xs font-semibold tracking-wider max-w-full">
+                <span className="w-2 h-2 rounded-full bg-accentCyan animate-ping shrink-0" />
+                <span className="break-words">HAVE A VISIONARY PROJECT OR ROLE?</span>
               </div>
 
-              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-textPrimary tracking-tight leading-[1.05] sm:leading-[0.95]">
+              <h2 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-textPrimary tracking-tight leading-[1.05] sm:leading-[0.95]">
                 LET'S CREATE <br />
-                <span className="text-accentCyan text-outline group-hover:text-accentCyan transition-colors duration-500">
+                <span className="text-accentCyan font-extrabold transition-colors duration-500">
                   SOMETHING ICONIC.
                 </span>
               </h2>
