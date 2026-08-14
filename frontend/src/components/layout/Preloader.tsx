@@ -8,24 +8,34 @@ export const Preloader: React.FC<{ onComplete?: () => void }> = ({ onComplete })
   const [wordIndex, setWordIndex] = useState(0);
 
   useEffect(() => {
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      if (onComplete) onComplete();
+    };
+
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          if (onComplete) setTimeout(onComplete, 600);
+          setTimeout(finish, 200);
           return 100;
         }
-        return prev + 1;
+        return prev + 3;
       });
-    }, 20);
+    }, 16);
 
     const wordTimer = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
-    }, 400);
+    }, 300);
+
+    const maxSafetyTimer = setTimeout(finish, 1500);
 
     return () => {
       clearInterval(timer);
       clearInterval(wordTimer);
+      clearTimeout(maxSafetyTimer);
     };
   }, [onComplete]);
 

@@ -33,9 +33,16 @@ const ProtectedAdminRoute: React.FC<{ children: React.ReactNode }> = ({ children
 };
 
 export const App: React.FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    return !sessionStorage.getItem('suman_portfolio_loaded');
+  });
   const [isMatrixMode, setIsMatrixMode] = useState(false);
   const location = useLocation();
+
+  const handlePreloaderComplete = () => {
+    sessionStorage.setItem('suman_portfolio_loaded', 'true');
+    setLoading(false);
+  };
 
   // Matrix Mode Shortcut (Ctrl + Shift + M / Cmd + Shift + M)
   useEffect(() => {
@@ -107,7 +114,7 @@ export const App: React.FC = () => {
       <div className="bg-bgPrimary text-textPrimary min-h-screen relative overflow-x-hidden selection:bg-accentCyan selection:text-bgPrimary font-sans">
         <MatrixRainCanvas isActive={isMatrixMode} onToggle={() => setIsMatrixMode((prev) => !prev)} />
         <AnimatePresence mode="wait">
-          {loading && <Preloader onComplete={() => setLoading(false)} />}
+          {loading && <Preloader onComplete={handlePreloaderComplete} />}
         </AnimatePresence>
         <CustomCursor />
         {!isAdminRoute && <Navbar />}
