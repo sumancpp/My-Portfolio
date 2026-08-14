@@ -35,20 +35,38 @@ body.matrix-mode * {
   border-color: #232733;
 }
 
-html, body, #root {
+html {
   background-color: var(--bg-primary) !important;
   color: var(--text-primary);
   font-family: 'Space Grotesk', sans-serif;
   overflow-x: hidden;
-  overscroll-behavior-y: none;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   selection-background-color: var(--accent-cyan);
   selection-color: var(--bg-primary);
+}
+
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
   cursor: none;
 }
 
-@media (pointer: coarse) {
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
+  touch-action: pan-y;
+}
+
+@media (pointer: coarse), (max-width: 1024px) {
   html, body, #root {
     cursor: auto !important;
+    touch-action: pan-y;
   }
 }
 
