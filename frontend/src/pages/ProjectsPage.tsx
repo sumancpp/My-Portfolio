@@ -165,8 +165,10 @@ const categories = ['All', 'Full Stack', 'Frontend'];
 
 const normalizeImagePath = (img?: string) => {
   if (!img) return '/project-images/talentai.png';
+  if (img.includes('weatherApp')) return '/project-images/weather.png';
   if (img.startsWith('/project-images/')) return img;
   const filename = img.split('/').pop();
+  if (filename && filename.includes('weatherApp')) return '/project-images/weather.png';
   return `/project-images/${filename}`;
 };
 
@@ -181,7 +183,7 @@ const getProjectsFromCMS = () => {
           title: p.title || 'Untitled Project',
           category: p.category || 'Frontend',
           year: p.year || '2026',
-          image: normalizeImagePath(p.image),
+          image: normalizeImagePath(p.coverImage || p.image || (p.images && p.images[0])),
           tagline: p.tagline || p.description || '',
           slug: p.slug || (p.title ? p.title.toLowerCase().replace(/\s+/g, '-') : 'project'),
           demoUrl: p.demo || p.demoUrl || 'https://github.com/sumancpp',
@@ -225,13 +227,13 @@ export const ProjectsPage: React.FC = () => {
             title: p.title,
             category: p.category || 'Frontend',
             year: p.year || '2026',
-            image: p.image || '/project-images/talentai.png',
+            image: normalizeImagePath(p.coverImage || p.image || (p.images && p.images[0])),
             tagline: p.tagline || p.description || '',
             slug: p.slug,
-            demoUrl: p.demoUrl || p.demo || 'https://github.com/sumancpp',
+            demoUrl: p.liveUrl || p.demoUrl || p.demo || 'https://github.com/sumancpp',
             githubUrl: p.githubUrl || p.github || 'https://github.com/sumancpp',
             description: p.description || p.tagline || '',
-            tags: p.tags || [p.category || 'Frontend']
+            tags: p.techStack || p.tags || [p.category || 'Frontend']
           }));
 
           const combined = [...apiProjects];

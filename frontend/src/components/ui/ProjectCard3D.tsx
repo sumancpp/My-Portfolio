@@ -114,12 +114,16 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project }) => {
             className="max-w-full max-h-full object-contain filter drop-shadow-[0_10px_25px_rgba(0,240,255,0.2)] group-hover:scale-108 transition-transform duration-500"
             onError={(e) => {
               const target = e.currentTarget;
-              if (target.src.includes('/project-images/')) {
-                target.src = target.src.replace('/project-images/', '/');
-              } else {
+              if (!target.dataset.triedFallback) {
+                target.dataset.triedFallback = 'true';
                 const parts = target.src.split('/');
-                const filename = parts[parts.length - 1];
+                let filename = parts[parts.length - 1];
+                if (filename && filename.includes('weatherApp')) {
+                  filename = 'weather.png';
+                }
                 if (filename) target.src = `/project-images/${filename}`;
+              } else {
+                target.onerror = null;
               }
             }}
           />

@@ -45,26 +45,15 @@ const defaultFeaturedProjects = [
     githubUrl: 'https://github.com/sumancpp/RealTimeChat',
     description: 'Built a scalable real-time messaging platform supporting JWT auth, WebRTC audio/video calling, browser screen sharing, collaborative whiteboard, disappearing Ghost Ink messages, and Gemini AI code review.',
     tags: ['MERN Stack', 'Socket.IO', 'WebRTC', 'Google Gemini AI'],
-  },
-  {
-    id: '3',
-    title: 'PRIVATE PROPERTY RENTAL',
-    tagline: 'Clean & Responsive Property Discovery & Listing Platform',
-    category: 'React.js / Context API / UI Design',
-    year: '2025',
-    image: '/project-images/private-property-rental.png',
-    slug: 'property-rental',
-    demoUrl: 'https://private-property-rental-by-suman.netlify.app/',
-    githubUrl: 'https://github.com/sumancpp/React-Projects/tree/main/Personal%20Property%20Rental',
-    description: 'Built a Private Property Rental platform allowing users to discover and list diverse rental properties (Houses, Rooms, Cabins, Farm & Pool Houses, Shops, Forest Houses) with clean UI, search filtering, direct Gmail contact, and smooth animations.',
-    tags: ['React.js', 'React Router', 'Context API', 'UI/UX Design'],
   }
 ];
 
 const normalizeImagePath = (img?: string) => {
   if (!img) return '/project-images/talentai.png';
+  if (img.includes('weatherApp')) return '/project-images/weather.png';
   if (img.startsWith('/project-images/')) return img;
   const filename = img.split('/').pop();
+  if (filename && filename.includes('weatherApp')) return '/project-images/weather.png';
   return `/project-images/${filename}`;
 };
 
@@ -74,19 +63,22 @@ const getProjectsFromCMS = () => {
     try {
       const parsed = JSON.parse(saved);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed.map((p: any) => ({
-          id: p.id || String(Date.now()),
-          title: p.title || 'Untitled Project',
-          category: p.category || 'MERN Stack',
-          year: p.year || '2026',
-          image: normalizeImagePath(p.image),
-          tagline: p.tagline || p.description || '',
-          slug: p.slug || (p.title ? p.title.toLowerCase().replace(/\s+/g, '-') : 'project'),
-          demoUrl: p.demo || p.demoUrl || 'https://github.com/sumancpp',
-          githubUrl: p.github || p.githubUrl || 'https://github.com/sumancpp',
-          description: p.description || p.tagline || '',
-          tags: p.tags || [p.category || 'MERN Stack']
-        }));
+        return parsed
+          .filter((p: any) => p.featured || p.slug === 'talent-ai' || p.slug === 'baatcheet')
+          .slice(0, 2)
+          .map((p: any) => ({
+            id: p.id || String(Date.now()),
+            title: p.title || 'Untitled Project',
+            category: p.category || 'MERN Stack',
+            year: p.year || '2026',
+            image: normalizeImagePath(p.coverImage || p.image || (p.images && p.images[0])),
+            tagline: p.tagline || p.description || '',
+            slug: p.slug || (p.title ? p.title.toLowerCase().replace(/\s+/g, '-') : 'project'),
+            demoUrl: p.demo || p.demoUrl || 'https://github.com/sumancpp',
+            githubUrl: p.github || p.githubUrl || 'https://github.com/sumancpp',
+            description: p.description || p.tagline || '',
+            tags: p.tags || [p.category || 'MERN Stack']
+          }));
       }
     } catch {
       // Fallback
@@ -108,20 +100,25 @@ export const HomePage: React.FC = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success && Array.isArray(data.data) && data.data.length > 0) {
-          const apiProjects = data.data.map((p: any) => ({
-            id: p._id || p.id,
-            title: p.title,
-            category: p.category || 'MERN Stack',
-            year: p.year || '2026',
-            image: p.image || '/talentai.png',
-            tagline: p.tagline || p.description || '',
-            slug: p.slug,
-            demoUrl: p.demoUrl || p.demo || 'https://github.com/sumancpp',
-            githubUrl: p.githubUrl || p.github || 'https://github.com/sumancpp',
-            description: p.description || p.tagline || '',
-            tags: p.tags || [p.category || 'MERN Stack']
-          }));
-          setFeaturedProjects(apiProjects);
+          const apiProjects = data.data
+            .filter((p: any) => p.slug === 'talent-ai' || p.slug === 'baatcheet' || p.featured)
+            .slice(0, 2)
+            .map((p: any) => ({
+              id: p._id || p.id,
+              title: p.title,
+              category: p.category || 'MERN Stack',
+              year: p.year || '2026',
+              image: normalizeImagePath(p.coverImage || p.image || (p.images && p.images[0])),
+              tagline: p.tagline || p.description || '',
+              slug: p.slug,
+              demoUrl: p.liveUrl || p.demoUrl || p.demo || 'https://github.com/sumancpp',
+              githubUrl: p.githubUrl || p.github || 'https://github.com/sumancpp',
+              description: p.description || p.tagline || '',
+              tags: p.techStack || p.tags || [p.category || 'MERN Stack']
+            }));
+          if (apiProjects.length > 0) {
+            setFeaturedProjects(apiProjects);
+          }
         }
       })
       .catch(() => {});

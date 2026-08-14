@@ -318,7 +318,9 @@ const getProjectDataBySlug = (slugParam?: string): ProjectData => {
           role: found.projectType === 'Full Stack' ? 'Full Stack Engineer' : 'Frontend Engineer',
           year: found.year || '2026',
           stack: stackList,
-          image: found.image || '/project-images/talentai.png',
+          image: (found.image && found.image.includes('weatherApp'))
+            ? '/project-images/weather.png'
+            : (found.coverImage || found.image || (found.images && found.images[0]) || '/project-images/talentai.png'),
           demoUrl: found.demoUrl || found.demo || 'https://github.com/sumancpp',
           githubUrl: found.githubUrl || found.github || 'https://github.com/sumancpp',
           overview: found.description || found.tagline || 'Engineered web project with clean architecture and responsive UI design.',
@@ -374,12 +376,13 @@ export const ProjectDetailPage: React.FC = () => {
           className="w-full h-full object-contain"
           onError={(e) => {
             const target = e.currentTarget;
-            if (target.src.includes('/project-images/')) {
-              target.src = target.src.replace('/project-images/', '/');
-            } else {
+            if (!target.dataset.triedFallback) {
+              target.dataset.triedFallback = 'true';
               const parts = target.src.split('/');
               const filename = parts[parts.length - 1];
               if (filename) target.src = `/project-images/${filename}`;
+            } else {
+              target.onerror = null;
             }
           }}
         />
