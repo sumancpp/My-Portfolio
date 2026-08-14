@@ -82,6 +82,11 @@ export const ProjectCard3D: React.FC<ProjectCard3DProps> = ({ project }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleCardClick}
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1.02 }}
+      viewport={{ amount: 0.35 }}
+      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      whileTap={{ scale: 0.98 }}
       style={{
         rotateX: isHovered ? rotateX : 0,
         rotateY: isHovered ? rotateY : 0,

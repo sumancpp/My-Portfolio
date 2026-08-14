@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiAward, FiExternalLink, FiEye, FiX, FiCheckCircle } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import { MagneticButton } from '../components/ui/MagneticButton';
 
 const defaultCertificates = [
@@ -100,8 +101,13 @@ export const CertificatesPage: React.FC = () => {
       {certificates.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {certificates.map((cert) => (
-            <div
+            <motion.div
               key={cert.id}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1.02 }}
+              viewport={{ amount: 0.35 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              whileTap={{ scale: 0.98 }}
               className="glass-panel rounded-3xl overflow-hidden border border-borderDark hover:border-accentCyan/50 transition-all duration-300 group flex flex-col justify-between"
             >
               <div className="aspect-[16/10] overflow-hidden relative cursor-pointer bg-slate-950/80 p-4 flex items-center justify-center border-b border-borderDark/80" onClick={() => setSelectedCert(cert)}>
@@ -146,7 +152,7 @@ export const CertificatesPage: React.FC = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       ) : (

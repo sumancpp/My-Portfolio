@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowUpRight, FiClock } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 const blogs = [
   {
@@ -37,7 +38,15 @@ export const BlogsPage: React.FC = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {blogs.map((b) => (
-          <div key={b.id} className="glass-panel rounded-2xl overflow-hidden border border-borderDark hover:border-accentCyan/50 transition-all duration-300 group">
+          <motion.div
+            key={b.id}
+            initial={{ opacity: 0, y: 30, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1.02 }}
+            viewport={{ amount: 0.35 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            whileTap={{ scale: 0.98 }}
+            className="glass-panel rounded-2xl overflow-hidden border border-borderDark hover:border-accentCyan/50 transition-all duration-300 group"
+          >
             <div className="aspect-video overflow-hidden">
               <img src={b.image} alt={b.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale group-hover:grayscale-0" />
             </div>
@@ -57,7 +66,7 @@ export const BlogsPage: React.FC = () => {
                 READ ARTICLE <FiArrowUpRight />
               </Link>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
