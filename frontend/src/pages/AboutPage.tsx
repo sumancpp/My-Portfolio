@@ -55,25 +55,25 @@ export const AboutPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-4 text-sm">
-              <div className="flex justify-between items-center py-2 border-b border-borderDark/60">
-                <span className="text-textMuted font-mono text-xs uppercase">DEGREE</span>
+            <div className="space-y-4 text-xs sm:text-sm">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 border-b border-borderDark/60 gap-1">
+                <span className="text-textMuted font-mono text-[10px] sm:text-xs uppercase">DEGREE</span>
                 <span className="font-display font-semibold text-textPrimary">B.Tech CSE (2027)</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-borderDark/60">
-                <span className="text-textMuted font-mono text-xs uppercase">INSTITUTION</span>
-                <span className="font-display font-semibold text-textPrimary text-right">OmDayal Group of Inst.</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 border-b border-borderDark/60 gap-1">
+                <span className="text-textMuted font-mono text-[10px] sm:text-xs uppercase">INSTITUTION</span>
+                <span className="font-display font-semibold text-textPrimary text-left sm:text-right">OmDayal Group of Inst.</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-borderDark/60">
-                <span className="text-textMuted font-mono text-xs uppercase">ACADEMIC SGPA</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 border-b border-borderDark/60 gap-1">
+                <span className="text-textMuted font-mono text-[10px] sm:text-xs uppercase">ACADEMIC SGPA</span>
                 <span className="font-display font-bold text-accentCyan">7.64 / 10 (Till 6th Sem)</span>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-borderDark/60">
-                <span className="text-textMuted font-mono text-xs uppercase">INTERNSHIP</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 border-b border-borderDark/60 gap-1">
+                <span className="text-textMuted font-mono text-[10px] sm:text-xs uppercase">INTERNSHIP</span>
                 <span className="font-display font-semibold text-textPrimary">CodeAlpha Web Intern</span>
               </div>
-              <div className="flex justify-between items-center py-2">
-                <span className="text-textMuted font-mono text-xs uppercase">HONOR</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between py-2 gap-1">
+                <span className="text-textMuted font-mono text-[10px] sm:text-xs uppercase">HONOR</span>
                 <span className="font-display font-semibold text-accentCyan">OMTECH '26 Hackathon Runner-Up</span>
               </div>
             </div>

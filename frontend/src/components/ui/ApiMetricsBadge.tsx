@@ -106,7 +106,7 @@ export const ApiMetricsBadge: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-full mb-3 left-0 w-80 sm:w-96 p-5 rounded-2xl bg-bgCard/95 backdrop-blur-xl border border-borderDark shadow-2xl z-50 space-y-4"
+            className="absolute bottom-full mb-3 left-0 w-[88vw] max-w-sm p-4 sm:p-5 rounded-2xl bg-bgCard/95 backdrop-blur-xl border border-borderDark shadow-2xl z-50 space-y-4"
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-borderDark/60 pb-3">

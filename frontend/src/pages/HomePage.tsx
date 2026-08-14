@@ -141,11 +141,11 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 xl:gap-26 items-start">
             {/* Left: Name & Title */}
             <div className="lg:col-span-6">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-extrabold text-textPrimary tracking-tighter leading-none mb-6">
+              <h1 className="text-4xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-extrabold text-textPrimary tracking-tighter leading-none mb-6">
                 SUMAN<br />MAITY
-                <div className="flex items-center gap-3 flex-wrap text-3xl sm:text-5xl md:text-6xl lg:text-7xl mt-2 pb-1 pr-6">
+                <div className="flex items-center gap-2 sm:gap-3 flex-wrap text-2xl sm:text-5xl md:text-6xl lg:text-7xl mt-2 pb-1 pr-2 sm:pr-6">
                   <span>FULL-STACK </span>
-                  <span className="text-accentCyan text-outline inline-block pr-4 py-1">DEVELOPER</span>
+                  <span className="text-accentCyan text-outline inline-block pr-2 sm:pr-4 py-1">DEVELOPER</span>
                 </div>
               </h1>
 

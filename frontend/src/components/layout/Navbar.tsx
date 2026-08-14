@@ -103,14 +103,14 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, clipPath: 'circle(150% at 95% 5%)' }}
             exit={{ opacity: 0, clipPath: 'circle(0% at 95% 5%)' }}
             transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-40 bg-bgSecondary flex flex-col justify-between p-8 md:p-20 overflow-y-auto overscroll-contain text-textPrimary"
+            className="fixed inset-0 z-40 bg-bgSecondary flex flex-col justify-between p-6 sm:p-12 md:p-20 overflow-y-auto overscroll-contain text-textPrimary"
             data-lenis-prevent="true"
             data-lenis-prevent-wheel="true"
             data-lenis-prevent-touch="true"
             onWheel={(e) => e.stopPropagation()}
           >
-            <div className="pt-20 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 my-auto">
-              <div className="flex flex-col gap-4">
+            <div className="pt-16 sm:pt-20 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 my-auto">
+              <div className="flex flex-col gap-3 sm:gap-4">
                 <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
                   NAVIGATE ARCHITECTURE
                 </span>
@@ -119,11 +119,11 @@ export const Navbar: React.FC = () => {
                     key={link.name}
                     initial={{ x: -40, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 * idx, duration: 0.5 }}
+                    transition={{ delay: 0.08 * idx, duration: 0.4 }}
                   >
                     <Link
                       to={link.path}
-                      className="group flex items-center gap-4 text-4xl sm:text-6xl font-display font-extrabold text-textPrimary hover:text-accentCyan transition-colors"
+                      className="group flex items-center gap-3 sm:gap-4 text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-textPrimary hover:text-accentCyan transition-colors"
                     >
                       <span className="text-xs font-mono text-textMuted group-hover:text-accentCyan">
                         0{idx + 1}
@@ -134,18 +134,18 @@ export const Navbar: React.FC = () => {
                 ))}
               </div>
 
-              <div className="flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-borderDark pt-8 lg:pt-0 lg:pl-12">
+              <div className="flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-borderDark pt-6 lg:pt-0 lg:pl-12">
                 <div>
-                  <h4 className="text-accentCyan font-mono text-xs tracking-widest uppercase mb-4">
+                  <h4 className="text-accentCyan font-mono text-xs tracking-widest uppercase mb-3">
                     DIRECT INQUIRIES
                   </h4>
-                  <p className="text-2xl font-display text-textPrimary font-semibold mb-2">
+                  <p className="text-lg sm:text-2xl font-display text-textPrimary font-semibold mb-2 break-all">
                     suuman.maity@gmail.com
                   </p>
                   <p className="text-textSecondary text-sm mb-2">
                     +91 8597433833
                   </p>
-                  <p className="text-textMuted text-xs mb-8">
+                  <p className="text-textMuted text-xs mb-6 sm:mb-8">
                     Howrah, India • Final-Year B.Tech CSE (OmDayal Group of Institutions)
                   </p>
 
