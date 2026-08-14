@@ -26,6 +26,7 @@ const allowedOrigins = [
   process.env.CLIENT_URL,
   'http://localhost:5173',
   'http://localhost:3000',
+  'https://my-portfolio-frontend-za41.onrender.com',
   'https://talentai.sumann.in',
   'https://baatcheet.sumann.in',
 ].filter(Boolean) as string[];

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../utils/api';
 import { HeroCanvas } from '../components/canvas/HeroCanvas';
 import { MagneticButton } from '../components/ui/MagneticButton';
 import { ProjectCard3D } from '../components/ui/ProjectCard3D';
@@ -96,7 +97,7 @@ export const HomePage: React.FC = () => {
     setFeaturedProjects(cmsProjects);
 
     // Fetch from Backend API if available
-    fetch('/api/projects')
+    fetch(`${API_BASE_URL}/api/projects`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success && Array.isArray(data.data) && data.data.length > 0) {

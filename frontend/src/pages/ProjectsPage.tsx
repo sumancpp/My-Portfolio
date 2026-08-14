@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../utils/api';
 import { ProjectCard3D } from '../components/ui/ProjectCard3D';
 import { FiSearch } from 'react-icons/fi';
 
@@ -218,7 +219,7 @@ export const ProjectsPage: React.FC = () => {
     setProjects(cmsProjects);
 
     // Fetch from Backend API if operational
-    fetch('/api/projects')
+    fetch(`${API_BASE_URL}/api/projects`)
       .then((res) => res.json())
       .then((data) => {
         if (data.success && Array.isArray(data.data) && data.data.length > 0) {
