@@ -228,8 +228,8 @@ export const HomePage: React.FC = () => {
             <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
              ENGINEER BACKGROUND & VISION
             </span>
-            <h2 className="text-4xl sm:text-5xl font-display font-extrabold text-textPrimary mt-2 leading-tight">
-              Building High-Performance <span className="text-outline">Digital Systems.</span>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-extrabold text-textPrimary mt-2 leading-tight tracking-tight break-words">
+              Building High-Performance <span className="text-outline inline-block">Digital Systems.</span>
             </h2>
           </div>
 

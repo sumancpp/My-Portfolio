@@ -311,11 +311,13 @@ Suman specializes in React.js, Node.js, MongoDB, Socket.IO, WebRTC, and Gemini A
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="group flex items-center gap-3 px-5 py-3.5 rounded-full bg-gradient-to-r from-accentCyan to-blue-500 text-bgPrimary font-display font-bold text-xs sm:text-sm shadow-2xl hover:shadow-accentCyan/40 hover:scale-105 transition-all duration-300"
+          className="group flex items-center gap-2 sm:gap-3 px-3.5 py-2 sm:px-5 sm:py-3.5 rounded-full bg-gradient-to-r from-accentCyan to-blue-500 text-bgPrimary font-display font-bold text-xs sm:text-sm shadow-2xl hover:shadow-accentCyan/40 hover:scale-105 transition-all duration-300"
+          title="Ask Suman AI Assistant"
         >
-          <FiCpu className="text-lg animate-pulse" />
-          <span>ASK SUMAN AI</span>
-          <span className="w-2 h-2 rounded-full bg-bgPrimary animate-ping" />
+          <FiCpu className="text-sm sm:text-lg animate-pulse shrink-0" />
+          <span className="hidden sm:inline">ASK SUMAN AI</span>
+          <span className="sm:hidden font-mono font-bold text-[11px] tracking-wider">AI</span>
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-bgPrimary animate-ping shrink-0" />
         </button>
       )}
 
