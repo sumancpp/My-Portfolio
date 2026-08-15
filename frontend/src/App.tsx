@@ -17,6 +17,8 @@ import { SkillsPage } from './pages/SkillsPage';
 import { ExperiencePage } from './pages/ExperiencePage';
 import { CertificatesPage } from './pages/CertificatesPage';
 import { ContactPage, NotFoundPage } from './pages/ContactPage';
+import { BlogsPage } from './pages/BlogsPage';
+import { BlogDetailPage } from './pages/BlogDetailPage';
 import { LoginPage } from './pages/LoginPage';
 import { DashboardPage } from './pages/admin/DashboardPage';
 import { AskSumanAIChat } from './components/ui/AskSumanAIChat';
@@ -128,6 +130,8 @@ export const App: React.FC = () => {
             <Route path="/skills" element={<SkillsPage />} />
             <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/certificates" element={<CertificatesPage />} />
+            <Route path="/blogs" element={<BlogsPage />} />
+            <Route path="/blogs/:slug" element={<BlogDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route

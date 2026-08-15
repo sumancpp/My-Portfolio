@@ -128,11 +128,11 @@ export const HomePage: React.FC = () => {
   return (
     <div className="relative">
       {/* 3D WebGL Canvas Hero with Portrait */}
-      <section className="relative min-h-screen flex flex-col justify-between pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-between pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
         <HeroCanvas />
 
-        <div className="relative z-10 my-auto pt-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accentCyan/10 border border-accentCyan/30 text-accentCyan font-mono text-xs mb-6">
+        <div className="relative z-10 my-auto pt-2 sm:pt-8 md:pt-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accentCyan/10 border border-accentCyan/30 text-accentCyan font-mono text-xs mb-4 sm:mb-6">
             <span className="w-2 h-2 rounded-full bg-accentCyan animate-ping" />
             AVAILABLE FOR FULL-STACK & AI ROLES
           </div>

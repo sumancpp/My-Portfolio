@@ -141,7 +141,7 @@ const skillCategories: SkillCategory[] = [
 
 export const SkillsPage: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto space-y-16">
+    <div className="pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-24 px-6 md:px-12 max-w-7xl mx-auto space-y-12 sm:space-y-16">
       {/* Header */}
       <div>
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase flex items-center gap-2">

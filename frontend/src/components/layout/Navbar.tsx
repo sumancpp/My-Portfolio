@@ -36,8 +36,8 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 ${
           scrolled
-            ? 'py-4 bg-bgPrimary/85 shadow-2xl border-b border-borderDark/30'
-            : 'py-6 bg-bgPrimary/0 border-b border-transparent shadow-none'
+            ? 'py-3 sm:py-4 bg-bgPrimary/85 shadow-2xl border-b border-borderDark/30'
+            : 'py-3.5 sm:py-6 bg-bgPrimary/0 border-b border-transparent shadow-none'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">

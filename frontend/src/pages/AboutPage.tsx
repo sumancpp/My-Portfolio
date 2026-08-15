@@ -29,9 +29,9 @@ export const AboutPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <div className="pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-24 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Page Header */}
-      <div className="mb-20">
+      <div className="mb-10 sm:mb-20">
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           WHO I AM & WHAT DRIVES ME
         </span>

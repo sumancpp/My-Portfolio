@@ -6,12 +6,12 @@ export const BlogDetailPage: React.FC = () => {
   const { slug } = useParams();
 
   return (
-    <div className="pt-32 pb-24 px-6 md:px-12 max-w-4xl mx-auto">
-      <Link to="/blogs" className="inline-flex items-center gap-2 text-textMuted hover:text-accentCyan text-sm font-mono mb-8">
+    <div className="pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-24 px-6 md:px-12 max-w-4xl mx-auto">
+      <Link to="/blogs" className="inline-flex items-center gap-2 text-textMuted hover:text-accentCyan text-sm font-mono mb-4 sm:mb-8">
         <FiArrowLeft /> BACK TO ARTICLES
       </Link>
 
-      <div className="mb-12">
+      <div className="mb-8 sm:mb-12">
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           INSIGHTS & ENGINEERING
         </span>

@@ -26,8 +26,8 @@ const blogs = [
 
 export const BlogsPage: React.FC = () => {
   return (
-    <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="mb-16">
+    <div className="pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="mb-10 sm:mb-16">
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           THOUGHTS & INSIGHTS
         </span>

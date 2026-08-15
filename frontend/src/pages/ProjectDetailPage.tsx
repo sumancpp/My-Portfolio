@@ -349,14 +349,14 @@ export const ProjectDetailPage: React.FC = () => {
   const proj = getProjectDataBySlug(slug);
 
   return (
-    <div className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <div className="pt-20 sm:pt-28 md:pt-32 pb-16 sm:pb-24 px-6 md:px-12 max-w-7xl mx-auto">
       {/* Back Button */}
-      <Link to="/projects" className="inline-flex items-center gap-2 text-textMuted hover:text-accentCyan text-sm font-mono mb-8 transition-colors">
+      <Link to="/projects" className="inline-flex items-center gap-2 text-textMuted hover:text-accentCyan text-sm font-mono mb-4 sm:mb-8 transition-colors">
         <FiArrowLeft /> BACK TO ALL PROJECTS
       </Link>
 
       {/* Header */}
-      <div className="mb-12">
+      <div className="mb-8 sm:mb-12">
         <span className="text-accentCyan font-mono text-xs tracking-widest uppercase">
           {proj.category}
         </span>

@@ -544,7 +544,7 @@ export const DashboardPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-24 pb-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto min-h-screen">
+    <div className="pt-20 sm:pt-24 pb-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto min-h-screen">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10 border-b border-borderDark pb-6">
         <div>
